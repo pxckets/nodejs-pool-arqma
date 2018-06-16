@@ -58,8 +58,8 @@ Deployment via Installer
 ------------------------
 
 1. Add your user to `/etc/sudoers`, this must be done so the script can sudo up and do it's job.  We suggest passwordless sudo.  Suggested line: `<USER> ALL=(ALL) NOPASSWD:ALL`.  Our sample builds use: `pooldaemon ALL=(ALL) NOPASSWD:ALL`
-2. Run the [deploy script](https://raw.githubusercontent.com/arqtras/nodejs-pool/master/deployment/deploy_electroneum.bash) as a **NON-ROOT USER**.  This is very important!  This script will install the pool to whatever user it's running under!  Also.  Go get a coffee, this sucker bootstraps the monero installation.
-Install Script: curl -L https://raw.githubusercontent.com/arqtras/nodejs-pool/master/deployment/deploy_electroneum.bash | bash
+2. Run the [deploy script](https://raw.githubusercontent.com/arqma/nodejs-pool-arqma/master/deployment/deploy_arqma.bash) as a **NON-ROOT USER**.  This is very important!  This script will install the pool to whatever user it's running under!  Also.  Go get a coffee, this sucker bootstraps the monero installation.
+Install Script: curl -L https://raw.githubusercontent.com/arqma/nodejs-pool-arqma/master/deployment/deploy_arqma.bash | bash
 3. Once it's complete, change as `config.json` appropriate.  It is pre-loaded for a local install of everything, running on 127.0.0.1.  This will work perfectly fine if you're using a single node setup.  You will also want to run: source ~/.bashrc  This will activate NVM and get things working for the following pm2 steps.
 4. You'll need to change the API end point for the frontend code in the `poolui/build/globals.js` and `poolui/build/global.default.js` -- This will usually be `http(s)://<your server FQDN>/api` unless you tweak caddy!
 5. Check `config.json` and change as appropriate. The default database directory `/home/<username>/pool_db/` is already been created during startup. If you change the `db_storage_path` just make sure your user has write permissions for new path. Run: `pm2 restart api` to reload the API for usage.  You'll also want to set `bind_ip` to the external IP of the pool server, and `hostname` to the resolvable hostname for the pool server. `pool_id` is mostly used for multi-server installations to provide unique identifiers in the backend.
@@ -80,7 +80,7 @@ pm2 restart api
 
 Install Script:
 ```bash
-curl -L https://raw.githubusercontent.com/ArqTras/nodejs-pool/master/deployment/deploy_electroneum.bash | bash
+curl -L https://raw.githubusercontent.com/arqma/nodejs-pool-arqma/master/deployment/deploy_arqma.bash | bash
 ```
 
 Assumptions for the installer
@@ -106,9 +106,9 @@ Wallet Setup
 ------------
 The pool is designed to have a dual-wallet design, one which is a fee wallet, one which is the live pool wallet.  The fee wallet is the default target for all fees owed to the pool owner.  PM2 can also manage your wallet daemon, and that is the suggested run state.
 
-1. Generate your wallets using `/usr/local/src/electroneum/bin/electroneum-wallet-cli`
+1. Generate your wallets using `/usr/local/src/arqma/bin/arqma-wallet-cli`
 2. Make sure to save your regeneration stuff!
-2. Start the wallet using PM2: `pm2 start /usr/local/src/electroneum/bin/electroneum-wallet-rpc -- --rpc-bind-port 26969 --wallet-file <Your wallet name here> --password <Your wallet password here> --disable-rpc-login --trusted-daemon`
+2. Start the wallet using PM2: `pm2 start /usr/local/src/arqma/bin/-wallet-rpc -- --rpc-bind-port 26969 --wallet-file <Your wallet name here> --password <Your wallet password here> --disable-rpc-login --trusted-daemon`
 3. If you don't use PM2, then throw the wallet into a screen and have fun.
 
 Manual Setup
@@ -263,18 +263,10 @@ If you'd like to make a one time donation, the addresses are as follows:
 * XMR 4AYuDc4cEqxfxVTUFwVqPd4JdmKLjm9dNhTjuT6Ud5gQa564wp6cxMBWbwaVe4vUMveKAzAiA4j8xgUi29TpKXpm3zc3jmn
 * ETN etnkLgWfr5uE8MZSZpsabb6HjG8Mig9qaS4wQ6Hu2VVKTiJT9Ucdrzz9CqGF9tycaWbntrSRr1CwVJDqGYPtumL72GhXwtoPvs
 ```
-MoneroOcean for His great job with pool system
-```
-* AEON - WmsEg3RuUKCcEvFBtXcqRnGYfiqGJLP1FGBYiNMgrcdUjZ8iMcUn2tdcz59T89inWr9Vae4APBNf7Bg2DReFP5jr23SQqaDMT
-* XMR - 499fS1Phq64hGeqV8p2AfXbf6Ax7gP6FybcMJq6Wbvg8Hw6xms8tCmdYpPsTLSaTNuLEtW4kF2DDiWCFcw4u7wSvFD8wFWE
-* ETN - etnkQMp3Hmsay2p7uxokuHRKANrMDNASwQjDUgFb5L2sDM3jqUkYQPKBkooQFHVWBzEaZVzfzrXoETX6RbMEvg4R4csxfRHLo1
-* SUMO - Sumoo1DGS7c9LEKZNipsiDEqRzaUB3ws7YHfUiiZpx9SQDhdYGEEbZjRET26ewuYEWAZ8uKrz6vpUZkEVY7mDCZyGnQhkLpxKmy
-```
-My pools:
+
+Pools:
 ================
-* https://supportaeon.com
-* https://supportetn.eu
-* https://graft.supportcryptonight.com
+* https://pool.arqma.com
 
 Credits
 =======
