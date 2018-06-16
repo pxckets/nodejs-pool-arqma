@@ -1,0 +1,10 @@
+{
+    "arqma": {
+    "funcFile": "./lib/coins/arqma.js",
+    "paymentFile": "./payment_systems/arqma.js",
+    "sigDigits": 1000000000,
+    "name": "ARQMA Coin",
+    "mixIn": 6,
+    "shortCode": "ARQMA"
+  }
+}
