@@ -64,7 +64,7 @@ sudo chown -R root:www-data /etc/caddy
 sudo mkdir /etc/ssl/caddy
 sudo chown -R www-data:root /etc/ssl/caddy
 sudo chmod 0770 /etc/ssl/caddy
-sudo cp ~/modejs-pool-arqma/deployment/caddyfile /etc/caddy/Caddyfile
+sudo cp ~/nodejs-pool-arqma/deployment/caddyfile /etc/caddy/Caddyfile
 sudo chown www-data:www-data /etc/caddy/Caddyfile
 sudo chmod 444 /etc/caddy/Caddyfile
 sudo sh -c "sed 's/ProtectHome=true/ProtectHome=false/' init/linux-systemd/caddy.service > /etc/systemd/system/caddy.service"
