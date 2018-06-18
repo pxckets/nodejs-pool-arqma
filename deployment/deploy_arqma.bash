@@ -24,7 +24,7 @@ sudo mv libg* /usr/lib/
 cd ~
 sudo systemctl enable ntp
 cd /usr/local/src
-sudo git clone --recursive https://github.com/arqma/arqma
+sudo git clone --recursive https://github.com/arqma/arqma.git
 cd arqma
 sudo make -j$(nproc)
 sudo cp ~/nodejs-pool-arqma/deployment/arqma.service /lib/systemd/system/
