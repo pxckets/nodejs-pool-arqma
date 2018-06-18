@@ -23,10 +23,10 @@ sudo mv libg* /usr/lib/
 cd ~
 sudo systemctl enable ntp
 cd /usr/local/src
-sudo git clone https://github.com/arqma/arqma.git
+sudo git clone --recursive https://github.com/arqma/arqma
 cd arqma
 sudo make -j$(nproc)
-sudo cp ~/nodejs-pool/deployment/arqma.service /lib/systemd/system/
+sudo cp ~/nodejs-pool-arqma/deployment/arqma.service /lib/systemd/system/
 sudo useradd -m arqmadaemon -d /home/arqmadaemon
 sudo systemctl daemon-reload
 sudo systemctl enable arqma
@@ -63,7 +63,7 @@ sudo chown -R root:www-data /etc/caddy
 sudo mkdir /etc/ssl/caddy
 sudo chown -R www-data:root /etc/ssl/caddy
 sudo chmod 0770 /etc/ssl/caddy
-sudo cp ~/aeon-rebase-pool/deployment/caddyfile /etc/caddy/Caddyfile
+sudo cp ~/modejs-pool-arqma/deployment/caddyfile /etc/caddy/Caddyfile
 sudo chown www-data:www-data /etc/caddy/Caddyfile
 sudo chmod 444 /etc/caddy/Caddyfile
 sudo sh -c "sed 's/ProtectHome=true/ProtectHome=false/' init/linux-systemd/caddy.service > /etc/systemd/system/caddy.service"
