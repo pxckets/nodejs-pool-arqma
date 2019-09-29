@@ -1,10 +1,10 @@
 {
-    "arqma": {
-    "funcFile": "./lib/coins/arqma.js",
-    "paymentFile": "./payment_systems/arqma.js",
+    "oscillate": {
+    "funcFile": "./lib/coins/oscillate.js",
+    "paymentFile": "./payment_systems/oscillate.js",
     "sigDigits": 1000000000,
-    "name": "ARQMA Coin",
+    "name": "Oscillate",
     "mixIn": 6,
-    "shortCode": "ARQMA"
+    "shortCode": "OSL"
   }
 }

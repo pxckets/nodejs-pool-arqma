@@ -201,7 +201,7 @@ INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES 
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'feesForTXN', '0.01', 'int', 'Amount of XMR that is left from the fees to pay miner fees.');
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'maxTxnValue', '10000', 'int', 'Maximum amount of XMR to send in a single transaction');
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'shapeshiftPair', 'arq_btc', 'string', 'Pair to use in all shapeshift lookups for auto BTC payout');
-INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('general', 'coinCode', 'ARQMA', 'string', 'Coincode to be loaded up w/ the shapeshift getcoins argument.');
+INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('general', 'coinCode', 'OSL', 'string', 'Coincode to be loaded up w/ the shapeshift getcoins argument.');
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('general', 'allowBitcoin', 'false', 'bool', 'Allow the pool to auto-payout to BTC via ShapeShift');
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'exchangeRate', '0', 'float', 'Current exchange rate');
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'bestExchange', 'arq_to', 'string', 'Current best exchange');

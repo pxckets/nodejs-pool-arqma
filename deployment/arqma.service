@@ -1,13 +1,13 @@
 [Unit]
-Description=Arqma Daemon
+Description=Oscillate Daemon
 After=network.target
 
 [Service]
 Type=forking
 GuessMainPID=no
-ExecStart=/usr/local/src/arqma/build/release/bin/arqmad --rpc-bind-ip 127.0.0.1 --detach --restricted-rpc
+ExecStart=/usr/local/src/oscillate/build/release/bin/oscillated --rpc-bind-ip 127.0.0.1 --detach --restricted-rpc
 Restart=always
-User=arqmadaemon
+User=oscillatedaemon
 
 [Install]
 WantedBy=multi-user.target

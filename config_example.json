@@ -3,12 +3,12 @@
   "bind_ip": "0.0.0.0",
   "hostname": "testpool.com",
   "db_storage_path": "CHANGEME",
-  "coin": "arqma",
+  "coin": "oscillate",
   "mysql": {
     "connectionLimit": 20,
     "host": "127.0.0.1",
     "database": "pool",
     "user": "pool",
-    "password": "98erhfiuehw987fh23d"
+    "password": "123"
   }
 }

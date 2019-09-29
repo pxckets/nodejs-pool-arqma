@@ -17,7 +17,7 @@ let coinInc;
 
 // Config Table Layout
 // <module>.<item>
-
+// THATS FUCKING DOPE!
 global.mysql.query("SELECT * FROM config").then(function (rows) {
     rows.forEach(function (row){
         if (!global.config.hasOwnProperty(row.module)){

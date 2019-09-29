@@ -12,7 +12,7 @@ sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install git python-virtualenv python3-virtualenv curl ntp build-essential screen cmake pkg-config libboost-all-dev libevent-dev libunbound-dev libminiupnpc-dev libunwind8-dev liblzma-dev libldns-dev libexpat1-dev libgtest-dev libzmq3-dev
 cd ~
-git clone https://github.com/nodejs-pool-arqma/nodejs-pool-arqma.git  # Change this depending on how the deployment goes.
+git clone https://github.com/oscillate-project/nodejs-pool-oscillate.git  # Change this depending on how the deployment goes.
 cd /usr/src/gtest
 sudo cmake .
 sudo make
@@ -20,18 +20,18 @@ sudo mv libg* /usr/lib/
 cd ~
 sudo systemctl enable ntp
 cd /usr/local/src
-sudo git clone https://github.com/arqma/arqma.git
-cd arqma
+sudo git clone https://github.com/oscillate_project/OSLV2.git
+cd oscillate
 sudo make -j$(nproc)
-sudo cp ~/nodejs-pool/deployment/arqma.service /lib/systemd/system/
-sudo useradd -m arqmadaemon -d /home/arqmadaemon
+sudo cp ~/nodejs-pool/deployment/oscillate.service /lib/systemd/system/
+sudo useradd -m oscillatedaemon -d /home/oscillatedaemon
 sudo systemctl daemon-reload
-sudo systemctl enable arqma
-sudo systemctl start arqma
+sudo systemctl enable oscillate
+sudo systemctl start oscillate
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 source ~/.nvm/nvm.sh
 nvm install v8.9.3
-cd ~/nodejs-pool-arqma
+cd ~/nodejs-pool-oscillate
 npm install
 npm install -g pm2
 openssl req -subj "/C=IT/ST=Pool/L=Daemon/O=Mining Pool/CN=mining.pool" -newkey rsa:2048 -nodes -keyout cert.key -x509 -out cert.pem -days 36500
